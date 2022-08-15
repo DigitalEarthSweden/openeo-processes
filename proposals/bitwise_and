@@ -1,0 +1,112 @@
+{
+    "id": "bitwise_and",
+    "summary": "Bitwise AND",
+    "description": "",
+    "categories": [
+        "logic"
+    ],
+    "experimental": true,
+    "parameters": [
+        {
+            "name": "x",
+            "description": "An integer value, or array of integers",
+            "schema": {
+                "type": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "y",
+            "description": "An integer value, or array of integers",
+            "schema": {
+                "type": [
+                    "integer"
+                ]
+            }
+        }
+    ],
+    "returns": {
+        "description": "Bitwise result if x and y. If one of the arguments is array-like, single values are distributed over that array. ",
+        "schema": {
+            "type": [
+                "integer"
+            ]
+        }
+    },
+    "examples": [
+        {
+            "arguments": {
+                "x": 3,
+                "y": 2
+            },
+            "returns": 2
+        },
+        {
+            "arguments": {
+                "x": 2,
+                "y": [
+                    1,
+                    2,
+                    3
+                ]
+            },
+            "returns": [
+                0,
+                1,
+                1
+            ]
+        },
+        {
+            "arguments": {
+                "x": 2,
+                "y": [
+                    1,
+                    2,
+                    4
+                ]
+            },
+            "returns": [
+                0,
+                1,
+                0
+            ]
+        },
+        {
+            "arguments": {
+                "x": [
+                    1,
+                    2,
+                    3
+                ],
+                "y": [
+                    1,
+                    1,
+                    1
+                ]
+            },
+            "returns": [
+                1,
+                0,
+                1
+            ]
+        }
+    ],
+    "process_graph": {
+        "all": {
+            "process_id": "all",
+            "arguments": {
+                "data": [
+                    {
+                        "from_parameter": "x"
+                    },
+                    {
+                        "from_parameter": "y"
+                    }
+                ],
+                "ignore_nodata": false
+            },
+            "result": true
+        }
+    }
+}
