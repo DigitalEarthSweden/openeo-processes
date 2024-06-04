@@ -1,5 +1,5 @@
 {
-    "id": "quality_filter",
+    "id": "filter_quality",
     "summary": "Filter based on a threshold",
     "description": "Limits the data cube to the specified threshold.\n\nMore precisely, the filter checks whether each of the temporal dimension labels matches the given threshold of the given filter.",
     "categories": [
