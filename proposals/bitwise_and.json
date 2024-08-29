@@ -1,30 +1,31 @@
 {
     "id": "bitwise_and",
     "summary": "Bitwise AND",
-    "description": "Performs a bitwise AND operation on two integer values.\n\nEach bit in the result is set to `1` if the corresponding bits in both operands are `1`, otherwise the bit is set to `0`.\n\n**Example bitwise AND operation:**\n\n```\n  a = 5   (binary: 0101)\n  b = 3   (binary: 0011)\n  a & b = 1 (binary: 0001)\n```",
+    "description": "Performs a bitwise AND operation on two inputs. This process supports both scalar values (integers and floats) and multi-dimensional arrays (e.g., datacubes). When applied to integers, the operation is performed on the binary representation of the numbers. When applied to floats, the values are truncated to their integer parts before the operation. Special cases like `NaN` in floats will propagate to the result. For multi-dimensional arrays, the operation is applied element-wise.",
     "categories": [
         "bitwise"
     ],
+    "experimental": true,
     "parameters": [
         {
             "name": "x",
-            "description": "An integer value.",
+            "description": "A numeric input, either an integer, float, or a multi-dimensional array.",
             "schema": {
-                "type": "integer"
+                "type": ["integer", "number", "array"]
             }
         },
         {
             "name": "y",
-            "description": "An integer value.",
+            "description": "A numeric input, either an integer, float, or a multi-dimensional array.",
             "schema": {
-                "type": "integer"
+                "type": ["integer", "number", "array"]
             }
         }
     ],
     "returns": {
-        "description": "Integer result of the bitwise AND.",
+        "description": "The result of the bitwise AND operation. If the inputs are scalars, the result is a scalar. If the inputs are multi-dimensional arrays, the result is an array.",
         "schema": {
-            "type": "integer"
+            "type": ["integer", "number", "array"]
         }
     },
     "examples": [
@@ -37,17 +38,17 @@
         },
         {
             "arguments": {
-                "x": 6,
-                "y": 4
+                "x": 6.7,
+                "y": 4.2
             },
             "returns": 4
         },
         {
             "arguments": {
-                "x": 7,
-                "y": 8
+                "x": [[5, 7], [8, 3]],
+                "y": [[1, 3], [8, 1]]
             },
-            "returns": 0
+            "returns": [[1, 3], [8, 1]]
         }
     ],
     "process_graph": {

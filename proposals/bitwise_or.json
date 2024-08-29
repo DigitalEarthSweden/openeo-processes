@@ -1,0 +1,68 @@
+{
+    "id": "bitwise_or",
+    "summary": "Bitwise OR",
+    "description": "Performs a bitwise OR operation on two integer values or numeric datacubes.\n\nEach bit in the result is set to `1` if at least one of the corresponding bits in the operands is `1`, otherwise the bit is set to `0`. The operation also supports numeric values where the float inputs are first converted to integers by truncation, and NaN values propagate in the result.\n\n**Example bitwise OR operation:**\n\n```\n  a = 5   (binary: 0101)\n  b = 3   (binary: 0011)\n  a | b = 7 (binary: 0111)\n```",
+    "categories": [
+        "bitwise"
+    ],
+    "experimental": true,
+    "parameters": [
+        {
+            "name": "x",
+            "description": "An integer value, float value, or numeric datacube.",
+            "schema": {
+                "type": ["integer", "number"]
+            }
+        },
+        {
+            "name": "y",
+            "description": "An integer value, float value, or numeric datacube.",
+            "schema": {
+                "type": ["integer", "number"]
+            }
+        }
+    ],
+    "returns": {
+        "description": "Result of the bitwise OR operation, with the same type as the inputs.",
+        "schema": {
+            "type": ["integer", "number"]
+        }
+    },
+    "examples": [
+        {
+            "arguments": {
+                "x": 5,
+                "y": 3
+            },
+            "returns": 7
+        },
+        {
+            "arguments": {
+                "x": 6,
+                "y": 4
+            },
+            "returns": 6
+        },
+        {
+            "arguments": {
+                "x": 7,
+                "y": 8
+            },
+            "returns": 15
+        }
+    ],
+    "process_graph": {
+        "bitwise_or": {
+            "process_id": "bitwise_or",
+            "arguments": {
+                "x": {
+                    "from_parameter": "x"
+                },
+                "y": {
+                    "from_parameter": "y"
+                }
+            },
+            "result": true
+        }
+    }
+}

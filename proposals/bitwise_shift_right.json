@@ -1,0 +1,68 @@
+{
+    "id": "bitwise_right_shift",
+    "summary": "Bitwise Right Shift",
+    "description": "Performs a bitwise right shift operation on an integer value. Shifts the bits of the first operand to the right by the number of positions specified by the second operand. The left side is filled based on the sign bit (for signed integers) or with zeros (for unsigned integers).\n\nThis operation effectively divides the integer by `2^y`, where `y` is the number of positions to shift, rounding down to the nearest integer.\n\n**Example bitwise right shift operation:**\n\n```\n  a = 5   (binary: 0101)\n  b = 1   (shift by 1)\n  a >> b = 2 (binary: 0010)\n```",
+    "categories": [
+        "bitwise"
+    ],
+    "experimental": true,
+    "parameters": [
+        {
+            "name": "x",
+            "description": "An integer value to be shifted.",
+            "schema": {
+                "type": "integer"
+            }
+        },
+        {
+            "name": "y",
+            "description": "The number of positions to shift the bits to the right.",
+            "schema": {
+                "type": "integer"
+            }
+        }
+    ],
+    "returns": {
+        "description": "Integer result of the bitwise right shift.",
+        "schema": {
+            "type": "integer"
+        }
+    },
+    "examples": [
+        {
+            "arguments": {
+                "x": 5,
+                "y": 1
+            },
+            "returns": 2
+        },
+        {
+            "arguments": {
+                "x": 8,
+                "y": 2
+            },
+            "returns": 2
+        },
+        {
+            "arguments": {
+                "x": 32,
+                "y": 3
+            },
+            "returns": 4
+        }
+    ],
+    "process_graph": {
+        "bitwise_right_shift": {
+            "process_id": "bitwise_right_shift",
+            "arguments": {
+                "x": {
+                    "from_parameter": "x"
+                },
+                "y": {
+                    "from_parameter": "y"
+                }
+            },
+            "result": true
+        }
+    }
+}

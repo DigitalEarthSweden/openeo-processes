@@ -1,0 +1,68 @@
+{
+    "id": "bitwise_xor",
+    "summary": "Bitwise XOR",
+    "description": "Performs a bitwise XOR (exclusive OR) operation on two integer values or numeric datacubes.\n\nEach bit in the result is set to `1` if the corresponding bits in the operands are different, and `0` if they are the same. The operation also supports numeric values where the float inputs are first converted to integers by truncation, and NaN values propagate in the result.\n\n**Example bitwise XOR operation:**\n\n```\n  a = 6   (binary: 0110)\n  b = 3   (binary: 0011)\n  a ^ b = 5 (binary: 0101)\n```",
+    "categories": [
+        "bitwise"
+    ],
+    "experimental": true,
+    "parameters": [
+        {
+            "name": "x",
+            "description": "An integer value, float value, or numeric datacube.",
+            "schema": {
+                "type": ["integer", "number"]
+            }
+        },
+        {
+            "name": "y",
+            "description": "An integer value, float value, or numeric datacube.",
+            "schema": {
+                "type": ["integer", "number"]
+            }
+        }
+    ],
+    "returns": {
+        "description": "Result of the bitwise XOR operation, with the same type as the inputs.",
+        "schema": {
+            "type": ["integer", "number"]
+        }
+    },
+    "examples": [
+        {
+            "arguments": {
+                "x": 6,
+                "y": 3
+            },
+            "returns": 5
+        },
+        {
+            "arguments": {
+                "x": 7,
+                "y": 8
+            },
+            "returns": 15
+        },
+        {
+            "arguments": {
+                "x": 12,
+                "y": 10
+            },
+            "returns": 6
+        }
+    ],
+    "process_graph": {
+        "bitwise_xor": {
+            "process_id": "bitwise_xor",
+            "arguments": {
+                "x": {
+                    "from_parameter": "x"
+                },
+                "y": {
+                    "from_parameter": "y"
+                }
+            },
+            "result": true
+        }
+    }
+}

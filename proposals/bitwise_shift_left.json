@@ -1,0 +1,68 @@
+{
+    "id": "bitwise_left_shift",
+    "summary": "Bitwise Left Shift",
+    "description": "Performs a bitwise left shift operation on an integer value. Shifts the bits of the first operand to the left by the number of positions specified by the second operand. The right side is filled with zeros.\n\nThis operation effectively multiplies the integer by `2^y`, where `y` is the number of positions to shift.\n\n**Example bitwise left shift operation:**\n\n```\n  a = 5   (binary: 0101)\n  b = 1   (shift by 1)\n  a << b = 10 (binary: 1010)\n```",
+    "categories": [
+        "bitwise"
+    ],
+    "experimental": true,
+    "parameters": [
+        {
+            "name": "x",
+            "description": "An integer value to be shifted.",
+            "schema": {
+                "type": "integer"
+            }
+        },
+        {
+            "name": "y",
+            "description": "The number of positions to shift the bits to the left.",
+            "schema": {
+                "type": "integer"
+            }
+        }
+    ],
+    "returns": {
+        "description": "Integer result of the bitwise left shift.",
+        "schema": {
+            "type": "integer"
+        }
+    },
+    "examples": [
+        {
+            "arguments": {
+                "x": 5,
+                "y": 1
+            },
+            "returns": 10
+        },
+        {
+            "arguments": {
+                "x": 3,
+                "y": 2
+            },
+            "returns": 12
+        },
+        {
+            "arguments": {
+                "x": 4,
+                "y": 3
+            },
+            "returns": 32
+        }
+    ],
+    "process_graph": {
+        "bitwise_left_shift": {
+            "process_id": "bitwise_left_shift",
+            "arguments": {
+                "x": {
+                    "from_parameter": "x"
+                },
+                "y": {
+                    "from_parameter": "y"
+                }
+            },
+            "result": true
+        }
+    }
+}
