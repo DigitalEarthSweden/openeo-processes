@@ -31,10 +31,10 @@
     "examples": [
         {
             "arguments": {
-                "x": 5,
+                "x": 6,
                 "y": 3
             },
-            "returns": 1
+            "returns": 2
         },
         {
             "arguments": {
